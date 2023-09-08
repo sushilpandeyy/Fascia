@@ -99,6 +99,11 @@ const navItems = [
       },
     ];
 
+    function getcurrent(){
+      const ls=useLocation();
+      setActive(ls);
+    }
+
 const Sidebar = ({
     drawerWidth, isSidebarOpen, setIsSidebarOpen, isNonMobile
   }) => {
@@ -108,6 +113,7 @@ const Sidebar = ({
     useEffect(() => {
         setActive(location.pathname);
     }, [location])
+    console.log("Active "+active);
   return (
     <Box component="nav">
             <Drawer
@@ -130,7 +136,7 @@ const Sidebar = ({
                   <Box m="1.5rem 2rem 2rem 3rem">
                     <FlexBetween color="#115173">
                         <Box display="flex" alignItems="Center" gap="0.5rem">
-                            <Typography variant="h6" fontWeight="bold" color="#FFD700">
+                            <Typography variant="h6" fontWeight="bold" color="#FFD700" >
                                 Fascia 
                             </Typography>
                         </Box>
@@ -150,17 +156,17 @@ const Sidebar = ({
                                     </Typography>
                                 )
                             }
-                            const lcText=text.toLowerCase();
+                            const lcText='/'+text.toLowerCase();
                             return (
                                 <ListItem key={text} disablePadding>
                                     <ListItemButton 
-                                    onClick={()=> {navigate("/"+{lcText});
+                                    onClick={()=> {navigate(lcText);
                                     setActive(lcText);
                                 }}
                                 sx={{
                                   backgroundColor:
                                     active === lcText
-                                      ? "#053F5E"
+                                      ? "#FFD700"
                                       : "transparent",
                                   color:
                                     active === lcText
@@ -173,15 +179,16 @@ const Sidebar = ({
                                     ml: "2rem",
                                     color:
                                       active === lcText
-                                        ? "#FFD700"
-                                        : "##053F5E",
+                                        ? "#053F5E"
+                                        : "#022C43",
                                   }}
                                 >
                                   {icon}
                                 </ListItemIcon>
                                 <ListItemText primary={text} 
                                 sx={{
-                                  color: "#022C43"
+                                  color: "#022C43",
+                                  fontWeight: "100"
                                 }}/>
                       {active === lcText && (
                         <ChevronRightOutlined sx={{ ml: "auto" }} />

@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Box, useMediaQuery } from "@mui/material";
 import { Outlet } from 'react-router-dom';
 import Navbar from "../component/Navbar";
 import Sidebar from "../component/Sidebar";
 import { BrowserRouter as Router } from 'react-router-dom';
+import Dashboard from '../dashboard/index';
 
 const Layout = () => {
   const isNonMobile = useMediaQuery("(min-width: 600px)");
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [isSidebarOpen, setIsSidebarOpen] = React.useState(true);
 
   return (<Router>
     <Box display={isNonMobile ? "flex" : "block"} width="100%" height="100%">
@@ -23,6 +24,7 @@ const Layout = () => {
           setIsSidebarOpen={setIsSidebarOpen}
         />
         <Outlet />
+        <Dashboard />
       </Box>
     </Box>
     </Router>

@@ -37,7 +37,7 @@ import {
   } from "react-router-dom";
 import FlexBetween from "./FlexBetween";
 import sushil from "../assets/sushil.jpg";
-import { boxSizing } from "@mui/system";
+import { boxSizing, fontWeight } from "@mui/system";
 
 
 const navItems = [
@@ -131,7 +131,7 @@ const Sidebar = ({
                     <FlexBetween color="#115173">
                         <Box display="flex" alignItems="Center" gap="0.5rem">
                             <Typography variant="h6" fontWeight="bold" color="#FFD700">
-                                DASHBOARD
+                                Fascia 
                             </Typography>
                         </Box>
                         {!isNonMobile && (
@@ -179,7 +179,10 @@ const Sidebar = ({
                                 >
                                   {icon}
                                 </ListItemIcon>
-                                <ListItemText primary={text} />
+                                <ListItemText primary={text} 
+                                sx={{
+                                  color: "#022C43"
+                                }}/>
                       {active === lcText && (
                         <ChevronRightOutlined sx={{ ml: "auto" }} />
                                 )}

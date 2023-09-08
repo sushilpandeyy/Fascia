@@ -9,15 +9,18 @@ import {
 import Dashboard from './scenes/dashboard/index'
 import Layout from './scenes/Layout'
 import { setupListeners } from '@reduxjs/toolkit/dist/query';
-import {api} from "./state/api";
+import {api} from "./scenes/state/api";
 import { configureStore } from '@reduxjs/toolkit';
+import globalReducer from "./scenes/state/index";
 
 const store = configureStore({
   reducer: {
+    global: globalReducer,
     [api.reducerPath]: api.reducer,
   },
   middleware: (getDefault) => getDefault().concat(api.middleware),
 });
+setupListeners(store.dispatch);
 
 const router= createBrowserRouter([
   {

@@ -8,14 +8,16 @@ import {
 } from "react-router-dom";
 import Dashboard from './scenes/dashboard/index'
 import Layout from './scenes/Layout'
+import { setupListeners } from '@reduxjs/toolkit/dist/query';
+import {api} from "./state/api";
+import { configureStore } from '@reduxjs/toolkit';
 
-
-
-//const store = configureStore({
-//  reducer: {
-//    global: globalReducer,
-//  }
-//})
+const store = configureStore({
+  reducer: {
+    [api.reducerPath]: api.reducer,
+  },
+  middleware: (getDefault) => getDefault().concat(api.middleware),
+});
 
 const router= createBrowserRouter([
   {

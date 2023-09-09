@@ -1,12 +1,13 @@
 import React from 'react';
 import { Box, useMediaQuery } from "@mui/material";
-import { Outlet } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from "../component/Navbar";
 import Sidebar from "../component/Sidebar";
 import { BrowserRouter as Router } from 'react-router-dom';
 import Dashboard from '../dashboard/index';
 import { useGetUserQuery } from '../state/api';
 import { useSelector } from 'react-redux';
+import Products from '../Products/index';
 
 
 const Layout = () => {
@@ -32,8 +33,11 @@ const Layout = () => {
           isSidebarOpen={isSidebarOpen}
           setIsSidebarOpen={setIsSidebarOpen}
         />
-        <Outlet />
-        <Dashboard />
+        <Routes>
+        <Route path='/' element={<Navigate to="/dashboard" replace={true}/>}/>
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/shop" element={<Products />} />
+      </Routes>
       </Box>
     </Box>
     </Router>

@@ -13,6 +13,10 @@ import {api} from "./scenes/state/api";
 import { configureStore } from '@reduxjs/toolkit';
 import globalReducer from "./scenes/state/index";
 import { Provider } from 'react-redux';
+import Products from  "./scenes/Products"
+
+
+
 
 const store = configureStore({
   reducer: {
@@ -31,14 +35,19 @@ const router= createBrowserRouter([
   {
     path: "/dashboard",
     element: <Dashboard/>
+  },
+  {
+    path: "/shop",
+    element: <Products/>
   }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
       <Provider store={store}>
-    <Layout/>
+    <Layout>
    <RouterProvider router={router} />
+   </Layout>
    </Provider>
   </React.StrictMode>,
 )

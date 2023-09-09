@@ -14,7 +14,9 @@ const Layout = () => {
   const [isSidebarOpen, setIsSidebarOpen] = React.useState(true);
   const userId = useSelector((state) => state.global.userId);
   const data = useGetUserQuery(userId);
-
+  console.log(data)
+  const userName = data?.data?.name || '';
+  const occupation = data?.data?.occupation || " ";
   return (<Router>
     <Box display={isNonMobile ? "flex" : "block"} width="100%" height="100%">
       <Sidebar
@@ -25,7 +27,8 @@ const Layout = () => {
       />
       <Box flexGrow={1}>
         <Navbar
-          user= {data || {}}
+          user= {userName}
+          occup={occupation}
           isSidebarOpen={isSidebarOpen}
           setIsSidebarOpen={setIsSidebarOpen}
         />

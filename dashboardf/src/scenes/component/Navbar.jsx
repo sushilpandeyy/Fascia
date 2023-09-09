@@ -18,7 +18,7 @@ import { AppBar,
   MenuItem, } from '@mui/material'
 import FlexBetween from '../component/FlexBetween'
 
-const Navbar = ({ user, isSidebarOpen, setSidebarOpen}) => {
+const Navbar = ({ occup, user, isSidebarOpen, setSidebarOpen}) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const isOpen = Boolean(anchorEl);
   const handleClick = (event) => setAnchorEl(event.currentTarget);
@@ -81,13 +81,13 @@ const Navbar = ({ user, isSidebarOpen, setSidebarOpen}) => {
                   fontSize="0.85rem"
                   sx={{ color: "#053F5E" }}
                 >
-                  {user.name}
+                  {user}
                 </Typography>
                 <Typography
                   fontSize="0.75rem"
                   sx={{ color: "#053F5E" }}
                 >
-                  {user.occupation}
+                  {occup}
                 </Typography>
               </Box>
               <ArrowDropDownOutlined

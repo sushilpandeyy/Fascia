@@ -12,6 +12,7 @@ import { setupListeners } from '@reduxjs/toolkit/dist/query';
 import {api} from "./scenes/state/api";
 import { configureStore } from '@reduxjs/toolkit';
 import globalReducer from "./scenes/state/index";
+import { Provider } from 'react-redux';
 
 const store = configureStore({
   reducer: {
@@ -35,8 +36,10 @@ const router= createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+      <Provider store={store}>
     <Layout/>
    <RouterProvider router={router} />
+   </Provider>
   </React.StrictMode>,
 )
 

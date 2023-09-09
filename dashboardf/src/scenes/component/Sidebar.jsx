@@ -105,7 +105,7 @@ const navItems = [
     }
 
 const Sidebar = ({
-    drawerWidth, isSidebarOpen, setIsSidebarOpen, isNonMobile
+    user, drawerWidth, isSidebarOpen, setIsSidebarOpen, isNonMobile
   }) => {
     const location=useLocation();
     const [active, setActive] = useState("");

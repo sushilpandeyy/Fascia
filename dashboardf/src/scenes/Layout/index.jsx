@@ -10,6 +10,7 @@ import { useSelector } from 'react-redux';
 import Products from '../Products/index';
 import Customers from '../Customers/index';
 import Transactions from '../Transactions/index';
+import Geography from '../Geography/index';
 
 const Layout = () => {
   const isNonMobile = useMediaQuery("(min-width: 600px)");
@@ -40,6 +41,7 @@ const Layout = () => {
         <Route path="/shop" element={<Products />} />
         <Route path="/users" element={<Customers />}/>
         <Route path='/money' element={<Transactions/>}/>
+        <Route path='/map' element={<Geography/>}/>
       </Routes>
       </Box>
     </Box>

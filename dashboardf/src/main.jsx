@@ -16,7 +16,7 @@ import { Provider } from 'react-redux';
 import Products from  "./scenes/Products"
 import Customers from "./scenes/Customers"
 import Transactions from "./scenes/Transactions"
-
+import Geography from "./scenes/Geography"
 
 const store = configureStore({
   reducer: {
@@ -47,6 +47,10 @@ const router= createBrowserRouter([
   {
     path: "/money",
     element: <Transactions/>
+  },
+  {
+    path: "/map",
+    element: <Geography/>
   }
 ]);
 

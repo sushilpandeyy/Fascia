@@ -23,10 +23,15 @@ export const api = createApi({
           method: "GET",
           params: { page, pageSize, sort, search },
         }),
-    })
-})
+        providesTags: ["Transactions"],
+    }),
+    getGeography: build.query({
+        query: () => "client/geography",
+        providesTags: ["Geography"],
+      }),
+}),
 });
 
 export const {
-    useGetUserQuery, useGetProductsQuery, useGetCustomersQuery, useGetTransactionsQuery
+    useGetUserQuery, useGetProductsQuery, useGetCustomersQuery, useGetTransactionsQuery, useGetGeographyQuery,
 } = api;

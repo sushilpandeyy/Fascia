@@ -14,7 +14,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import globalReducer from "./scenes/state/index";
 import { Provider } from 'react-redux';
 import Products from  "./scenes/Products"
-
+import Customers from "./scenes/Customers"
 
 
 
@@ -39,6 +39,10 @@ const router= createBrowserRouter([
   {
     path: "/shop",
     element: <Products/>
+  },
+  {
+    path: "/users",
+    element: <Customers/>
   }
 ]);
 

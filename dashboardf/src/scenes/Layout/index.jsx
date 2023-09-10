@@ -8,7 +8,7 @@ import Dashboard from '../dashboard/index';
 import { useGetUserQuery } from '../state/api';
 import { useSelector } from 'react-redux';
 import Products from '../Products/index';
-
+import Customers from '../Customers/index';
 
 const Layout = () => {
   const isNonMobile = useMediaQuery("(min-width: 600px)");
@@ -37,6 +37,7 @@ const Layout = () => {
         <Route path='/' element={<Navigate to="/dashboard" replace={true}/>}/>
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/shop" element={<Products />} />
+        <Route path="/users" element={<Customers />}/>
       </Routes>
       </Box>
     </Box>

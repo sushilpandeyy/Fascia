@@ -11,8 +11,8 @@ import generalRoutes from "./routes/general.js";
 import managementRoutes from "./routes/management.js";
 import salesRoutes from "./routes/sales.js";
 
-import Transaction from "./models/Transaction.js";
-import {dataTransaction} from "./data/index.js";
+import User from "./models/User.js";
+import {dataUser} from "./data/index.js";
 
 /*configuration*/
 dotenv.config();
@@ -40,7 +40,7 @@ mongoose.connect(check, {
 })
 .then(()=> {
     app.listen(Port, ()=>console.log("Server Port "+Port));
-    //Transaction.insertMany(dataTransaction);
+   // User.insertMany(dataUser);
 })
 .catch((error)=>console.log(error+" did not connect"));
 

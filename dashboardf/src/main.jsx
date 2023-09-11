@@ -17,6 +17,7 @@ import Products from  "./scenes/Products"
 import Customers from "./scenes/Customers"
 import Transactions from "./scenes/Transactions"
 import Geography from "./scenes/Geography"
+import Overview from "./scenes/Overview"
 
 const store = configureStore({
   reducer: {
@@ -51,6 +52,10 @@ const router= createBrowserRouter([
   {
     path: "/map",
     element: <Geography/>
+  },
+  {
+    path: "/overview",
+    element: <Overview/>
   }
 ]);
 

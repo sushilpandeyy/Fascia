@@ -11,6 +11,7 @@ import Products from '../Products/index';
 import Customers from '../Customers/index';
 import Transactions from '../Transactions/index';
 import Geography from '../Geography/index';
+import Overview from '../Overview/';
 
 const Layout = () => {
   const isNonMobile = useMediaQuery("(min-width: 600px)");
@@ -42,6 +43,7 @@ const Layout = () => {
         <Route path="/users" element={<Customers />}/>
         <Route path='/money' element={<Transactions/>}/>
         <Route path='/map' element={<Geography/>}/>
+        <Route path="/overview" element={<Overview/>}/>
       </Routes>
       </Box>
     </Box>

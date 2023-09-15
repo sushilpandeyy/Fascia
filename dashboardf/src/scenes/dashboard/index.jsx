@@ -1,8 +1,12 @@
 import React from 'react'
+import Header from '../component/Header'
 
 function Dashboard() {
   return (
-    <div>Dashboard</div>
+    <>
+    <Header title="Breakdown" subtitle="Breaking Down Information"/>
+    
+    </>
   )
 }
 

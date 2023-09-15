@@ -14,6 +14,7 @@ import Geography from '../Geography/index';
 import Overview from '../Overview/';
 import Daily from "../daily";
 import Monthly from "../monthly";
+import Breakdown from '../Breakdown/index';
 
 const Layout = () => {
   const isNonMobile = useMediaQuery("(min-width: 600px)");
@@ -48,6 +49,7 @@ const Layout = () => {
         <Route path="/overview" element={<Overview/>}/>
         <Route path='/daily' element={<Daily/>}/>
         <Route path="/monthly" element={<Monthly/>}/>
+        <Route path="/breakdown" element={<Breakdown/>}/>
       </Routes>
       </Box>
     </Box>

@@ -20,6 +20,7 @@ import Geography from "./scenes/Geography"
 import Overview from "./scenes/Overview"
 import Daily from "./scenes/daily"
 import Monthly from "./scenes/monthly"
+import Breakdown from './scenes/Breakdown';
 
 const store = configureStore({
   reducer: {
@@ -66,6 +67,10 @@ const router= createBrowserRouter([
   {
     path: "/monthly",
     element: <Monthly/>
+  },
+  {
+    path: "/breakdown",
+    element: <Breakdown/>
   }
 ]);
 

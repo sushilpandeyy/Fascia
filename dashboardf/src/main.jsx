@@ -19,7 +19,7 @@ import Transactions from "./scenes/Transactions"
 import Geography from "./scenes/Geography"
 import Overview from "./scenes/Overview"
 import Daily from "./scenes/daily"
-
+import Monthly from "./scenes/monthly"
 
 const store = configureStore({
   reducer: {
@@ -62,6 +62,10 @@ const router= createBrowserRouter([
   {
     path: "/daily",
     element: <Daily/>
+  },
+  {
+    path: "/monthly",
+    element: <Monthly/>
   }
 ]);
 

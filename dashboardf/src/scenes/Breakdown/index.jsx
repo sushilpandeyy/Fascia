@@ -6,7 +6,7 @@ const Breakdown = () => {
   return (
     <div>
         <Header title="Breakdown" subtitle="Breaking Down Information"/>
-        <Breakdowncharts/>
+        <h6>Coming SOON!!</h6>
     </div>
   )
 }

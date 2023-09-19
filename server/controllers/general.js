@@ -15,7 +15,7 @@ export const getUser = async(req, res) => {
 
 export const getdashboardstats = async(req, res)=>{
     try {
-        const currentMonth = "November";
+    const currentMonth = "November";
     const currentYear = 2021;
     const currentDay = "2021-11-15";
 

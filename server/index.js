@@ -10,8 +10,8 @@ import clientRoutes from "./routes/client.js";
 import generalRoutes from "./routes/general.js";
 import managementRoutes from "./routes/management.js";
 import salesRoutes from "./routes/sale.js";
-import OverallStat from "./models/OverallStat.js";
-import {dataOverallStat} from "./data/index.js";
+import productstat from "./models/ProductStat.js";
+import {dataProductStat} from "./data/index.js";
 
 /*configuration*/
 dotenv.config();
@@ -39,7 +39,7 @@ mongoose.connect(check, {
 })
 .then(()=> {
     app.listen(Port, () => console.log("Server Port "+Port));
-    //OverallStat.insertMany(dataOverallStat);
+   //productstat.insertMany(dataProductStat);
 })
 .catch((error)=>console.log(error+" did not connect"));
 

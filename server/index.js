@@ -12,7 +12,7 @@ import managementRoutes from "./routes/management.js";
 import salesRoutes from "./routes/sale.js";
 import productstat from "./models/ProductStat.js";
 import {dataProductStat} from "./data/index.js";
-
+import Default from "./routes/Default.js"
 /*configuration*/
 dotenv.config();
 const app = express();
@@ -29,7 +29,7 @@ app.use("/client", clientRoutes);
 app.use("/general", generalRoutes);
 app.use("/management", managementRoutes);
 app.use("/sale", salesRoutes);
-
+app.use("/", Default)
 /* Mongoose Setup */
 const Port = process.env.PORT || 9000
 const check = process.env.Mongo_url;

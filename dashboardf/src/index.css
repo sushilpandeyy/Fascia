@@ -6,6 +6,13 @@ body,
     height: 100%;
     width: 100%;
     font-family: "Inter", sans-serif;
-    background-color: #022C43;
-    text-decoration: #FFD700;
+    background-color: var(--Base);
+    text-decoration: #1D1D2B;
 }
+:root {
+    --Dark: #1A1C20;
+    --Lildark: #F9813A;
+    --Highlight: #FFD5CD;
+    --Base: #FCF1F1;
+    --Diff: #2e9e79ff;
+  }

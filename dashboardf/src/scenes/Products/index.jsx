@@ -30,14 +30,14 @@ const Product = ({
     <Card
       sx={{
         backgroundImage: "none",
-        backgroundColor: "#115173",
+        backgroundColor: "var(--Lildark)",
         borderRadius: "0.55rem",
       }}
     >
       <CardContent>
         <Typography
           sx={{ fontSize: 14 }}
-          color="#053F5E"
+          color="var(--Highlight)"
           gutterBottom
         >
           {category}
@@ -45,8 +45,8 @@ const Product = ({
         <Typography variant="h5" component="div">
           {name}
         </Typography>
-        <Typography sx={{ mb: "1.5rem" }} color="#053F5E">
-          ${Number(price).toFixed(2)}
+        <Typography sx={{ mb: "1.5rem" }} color="var(--Dark)">
+        ₹{Number(price).toFixed(2)}
         </Typography>
         <Rating value={rating} readOnly />
 

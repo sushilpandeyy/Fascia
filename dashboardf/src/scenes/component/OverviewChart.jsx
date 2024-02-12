@@ -11,7 +11,7 @@ const OverviewChart = ({ isDashboard = false, view }) => {
       const { monthlyData } = data;
       const totalSalesLine = {
         id: "totalSales",
-        color: "#022C43",
+        color: "var(--Lildark)",
         data: [],
       };
       const totalUnitsLine = {

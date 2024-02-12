@@ -59,12 +59,11 @@ const Dashboard = () => {
     <Box m="1.5rem 2.5rem">
       <FlexBetween>
         <Header title="DASHBOARD" subtitle="Welcome to your dashboard" />
-
         <Box>
           <Button
             sx={{
-              backgroundColor: "#053F5E",
-              color: "#FFD700",
+              backgroundColor: "var(--Dark)",
+              color: "var(--Highlight)",
               fontSize: "14px",
               fontWeight: "bold",
               padding: "10px 20px",
@@ -94,7 +93,7 @@ const Dashboard = () => {
           description="Since last month"
           icon={
             <Email
-              sx={{ color: "#053F5E", fontSize: "26px" }}
+              sx={{ color: "var(--Highlight)", fontSize: "26px" }}
             />
           }
         />
@@ -105,14 +104,14 @@ const Dashboard = () => {
           description="Since last month"
           icon={
             <PointOfSale
-              sx={{ color: "#053F5E", fontSize: "26px" }}
+              sx={{ color: "var(--Highlight)", fontSize: "26px" }}
             />
           }
         />
         <Box
           gridColumn="span 8"
           gridRow="span 2"
-          backgroundColor={"#FFD700"}
+          backgroundColor={"var(--Lildark)"}
           p="1rem"
           borderRadius="0.55rem"
         >
@@ -125,7 +124,7 @@ const Dashboard = () => {
           description="Since last month"
           icon={
             <PersonAdd
-              sx={{ color: "#053F5E", fontSize: "26px" }}
+              sx={{ color: "var(--Highlight)", fontSize: "26px" }}
             />
           }
         />
@@ -136,7 +135,7 @@ const Dashboard = () => {
           description="Since last month"
           icon={
             <Traffic
-              sx={{ color: "#053F5E", fontSize: "26px" }}
+              sx={{ color: "var(--Highlight)", fontSize: "26px" }}
             />
           }
         />
@@ -154,20 +153,20 @@ const Dashboard = () => {
               borderBottom: "none",
             },
             "& .MuiDataGrid-columnHeaders": {
-              backgroundColor: "#FFD700",
-              color: "#022C43",
+              backgroundColor: "var(--Lildark)",
+              color: "var(--Dark)",
               borderBottom: "none",
             },
             "& .MuiDataGrid-virtualScroller": {
-              backgroundColor: "#FFD700",
+              backgroundColor: "var(--Lildark)",
             },
             "& .MuiDataGrid-footerContainer": {
-              backgroundColor: "#FFD700",
-              color: "#022C43",
+              backgroundColor: "var(--Lildark)",
+              color: "var(--Dark)",
               borderTop: "none",
             },
             "& .MuiDataGrid-toolbarContainer .MuiButton-text": {
-              color: `${"#053F5E"} !important`,
+              color: `${"var(--Dark)"} !important`,
             },
           }}
         >
@@ -181,18 +180,18 @@ const Dashboard = () => {
         <Box
           gridColumn="span 4"
           gridRow="span 3"
-          backgroundColor={"#FFD700"}
+          backgroundColor={"var(--Lildark)"}
           p="1.5rem"
           borderRadius="0.55rem"
         >
-          <Typography variant="h6" sx={{ color: "#022C43" }}>
+          <Typography variant="h6" sx={{ color: "var(--Dark)" }}>
             Sales By Category
           </Typography>
           <BreakdownChart isDashboard={true} />
           <Typography
             p="0 0.6rem"
             fontSize="0.8rem"
-            sx={{ color: "#053F5E" }}
+            sx={{ color: "var(--Dark)" }}
           >
             Breakdown of real states and information via category for revenue
             made for this year and total sales.

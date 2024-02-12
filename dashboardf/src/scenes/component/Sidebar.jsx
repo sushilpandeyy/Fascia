@@ -124,8 +124,8 @@ const Sidebar = ({
             sx={{
                 width: drawerWidth,
                 '& .MuiDrawer-paper': {
-                   color: "#115173",
-                   backgroundColor: "#053F5E",
+                   color: "var(--Lildark)",
+                   backgroundColor: "var(--Dark)",
                    boxSizing: "border-box",
                    borderWidth: isNonMobile?0:"2 px",
                    width: drawerWidth
@@ -134,9 +134,9 @@ const Sidebar = ({
             >
                 <Box width="100%">
                   <Box m="1.5rem 2rem 2rem 3rem">
-                    <FlexBetween color="#115173">
+                    <FlexBetween color="var(--Lildark)">
                         <Box display="flex" alignItems="Center" gap="0.5rem">
-                            <Typography variant="h6" fontWeight="bold" color="#FFD700" >
+                            <Typography variant="h6" fontWeight="bold" color="var(--Lildark)" >
                                 Fascia 
                             </Typography>
                         </Box>
@@ -166,12 +166,12 @@ const Sidebar = ({
                                 sx={{
                                   backgroundColor:
                                     active === lcText
-                                      ? "#FFD700"
+                                      ? "var(--Lildark)"
                                       : "transparent",
                                   color:
                                     active === lcText
-                                      ? "#FFD700"
-                                      : "#053F5E",
+                                      ? "var(--Lildark)"
+                                      : "var(--Dark)",
                                 }}
                               >
                                 <ListItemIcon
@@ -179,15 +179,15 @@ const Sidebar = ({
                                     ml: "2rem",
                                     color:
                                       active === lcText
-                                        ? "#053F5E"
-                                        : "#022C43",
+                                        ? "var(--Dark)"
+                                        : "var(--Highlight)",
                                   }}
                                 >
                                   {icon}
                                 </ListItemIcon>
                                 <ListItemText primary={text} 
                                 sx={{
-                                  color: "#022C43",
+                                  color: "var(--Highlight)",
                                   fontWeight: "100"
                                 }}/>
                       {active === lcText && (

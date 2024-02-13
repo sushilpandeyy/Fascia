@@ -2,6 +2,8 @@
 
 Fascia is a Dashboard application for visual representation of data.
 
+![Fascia Homepage](https://res.cloudinary.com/djug8zfu7/image/upload/f_auto,q_auto/uzovvq9as9o2zesm4vzq)
+
 ## Installation
 
 To get started with Fascia, you'll need to clone the repository and set up both the client and server:

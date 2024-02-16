@@ -1,6 +1,8 @@
-import React from "react";
+import {useEffect, useState} from "react";
 import FlexBetween from "../component/FlexBetween";
 import Header from "../component/Header";
+import Loading from "../component/Loading";
+
 import {
   DownloadOutlined,
   Email,
@@ -23,6 +25,24 @@ import StatBox from "../component/statebox";
 const Dashboard = () => {
   const isNonMediumScreens = useMediaQuery("(min-width: 1200px)");
   const { data, isLoading } = useGetDashboardQuery();
+  const [load, setload] = useState(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('https://fascia-backend.onrender.com/');
+        if (!response.ok) {
+          throw new Error('Failed to fetch data');
+        }
+        setload(false);
+      } catch (error) {
+        setError(error);
+      } 
+    };
+
+    fetchData();
+
+  }, []);
 
   const columns = [
     {
@@ -56,6 +76,8 @@ const Dashboard = () => {
   ];
 
   return (
+    <>
+    {(load)? <Loading/> :
     <Box m="1.5rem 2.5rem">
       <FlexBetween>
         <Header title="DASHBOARD" subtitle="Welcome to your dashboard" />
@@ -199,6 +221,8 @@ const Dashboard = () => {
         </Box>
       </Box>
     </Box>
+}
+    </>
   );
 };
 

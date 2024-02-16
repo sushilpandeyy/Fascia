@@ -9,6 +9,39 @@ body,
     background-color: var(--Base);
     text-decoration: #1D1D2B;
 }
+.boxloader{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+.loader-container {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+   
+  .loader {
+    content: "";
+    width: 60px;
+    height: 60px;
+    border: 8px solid #1A1C20;
+    border-top-color: #F9813A;
+    border-radius: 50%;
+    animation: loading-anim 1s ease infinite;
+  }
+   
+  @keyframes loading-anim {
+    to {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 :root {
     --Dark: #1A1C20;
     --Lildark: #F9813A;

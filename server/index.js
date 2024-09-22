@@ -12,34 +12,40 @@ import managementRoutes from "./routes/management.js";
 import salesRoutes from "./routes/sale.js";
 import productstat from "./models/ProductStat.js";
 import {dataProductStat} from "./data/index.js";
-import Default from "./routes/Default.js"
-/*configuration*/
+import Default from "./routes/Default.js";
+
+/* Configuration */
 dotenv.config();
 const app = express();
 app.use(express.json());
 app.use(helmet());
-app.use(helmet.crossOriginResourcePolicy({policy: "cross-origin"}));
+app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 app.use(morgan("common"));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
-app.use(cors());
+app.use(bodyParser.urlencoded({ extended: false }));
 
-//routes
+// Allow all origins with CORS
+app.use(cors({
+    origin: '*'
+}));
+
+// Routes
 app.use("/client", clientRoutes);
 app.use("/general", generalRoutes);
 app.use("/management", managementRoutes);
 app.use("/sale", salesRoutes);
-app.use("/", Default)
+app.use("/", Default);
+
 /* Mongoose Setup */
-const Port = process.env.PORT || 9000
+const Port = process.env.PORT || 9000;
 const check = process.env.Mongo_url;
+
 mongoose.connect(check, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 })
-.then(()=> {
-    app.listen(Port, () => console.log("Server Port "+Port));
-   //productstat.insertMany(dataProductStat);
+.then(() => {
+    app.listen(Port, () => console.log("Server running on port " + Port));
+    // productstat.insertMany(dataProductStat); // Uncomment if needed
 })
-.catch((error)=>console.log(error+" did not connect"));
-
+.catch((error) => console.log(error + " did not connect"));

@@ -34,10 +34,10 @@ setupListeners(store.dispatch);
 const router= createBrowserRouter([
   {
     path: "/",
-    element: <Navigate to="/dashboard" replace={true}/>
+    element: <Navigate to=""/>
   },
   {
-    path: "/dashboard",
+    path: "",
     element: <Dashboard/>
   },
   {

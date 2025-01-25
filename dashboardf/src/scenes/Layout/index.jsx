@@ -40,8 +40,7 @@ const Layout = () => {
           setIsSidebarOpen={setIsSidebarOpen}
         />
         <Routes>
-        <Route path='/' element={<Navigate to="/dashboard" replace={true}/>}/>
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="" element={<Dashboard />} />
         <Route path="/shop" element={<Products />} />
         <Route path="/users" element={<Customers />}/>
         <Route path='/money' element={<Transactions/>}/>

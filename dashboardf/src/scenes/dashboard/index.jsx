@@ -75,6 +75,25 @@ const Dashboard = () => {
     },
   ];
 
+  const handleDownload = async () => {
+    try {
+      const response = await fetch('https://fascia-backend.onrender.com/client/transactions');
+      const data = await response.json();
+      
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'transactions.json';
+      document.body.appendChild(a);
+      a.click();
+      window.URL.revokeObjectURL(url);
+      document.body.removeChild(a);
+    } catch (error) {
+      console.error('Download failed:', error);
+    }
+  };
+
   return (
     <>
     {(load)? <Loading/> :
@@ -82,18 +101,22 @@ const Dashboard = () => {
       <FlexBetween>
         <Header title="DASHBOARD" subtitle="Welcome to your dashboard" />
         <Box>
-          <Button
-            sx={{
-              backgroundColor: "var(--Dark)",
-              color: "var(--Highlight)",
-              fontSize: "14px",
-              fontWeight: "bold",
-              padding: "10px 20px",
-            }}
-          >
-            <DownloadOutlined sx={{ mr: "10px" }} />
-            Download Reports
-          </Button>
+        <Button
+  onClick={handleDownload}
+  sx={{
+    backgroundColor: "var(--Dark)",
+    color: "var(--Highlight)",
+    fontSize: "14px",
+    fontWeight: "bold",
+    padding: "10px 20px",
+    '&:hover': {
+      backgroundColor: "var(--Dark)", // Keep same background on hover
+    }
+  }}
+>
+  <DownloadOutlined sx={{ mr: "10px" }} />
+  Download Reports
+</Button>
         </Box>
       </FlexBetween>
 

@@ -18,7 +18,7 @@ import { AppBar,
   MenuItem, } from '@mui/material'
 import FlexBetween from '../component/FlexBetween'
 
-const Navbar = ({ occup, user, isSidebarOpen, setSidebarOpen}) => {
+const Navbar = ({ occup, user, isSidebarOpen, setIsSidebarOpen }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const isOpen = Boolean(anchorEl);
   const handleClick = (event) => setAnchorEl(event.currentTarget);
@@ -35,7 +35,7 @@ const Navbar = ({ occup, user, isSidebarOpen, setSidebarOpen}) => {
         <Toolbar sx={{ justifyContent: "space-between" }}>
           {/*LEFT SIDE*/}
           <FlexBetween>
-            <IconButton onClick={() => setSidebarOpen(!isSidebarOpen)}>
+          <IconButton onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
               <MenuIcon />
             </IconButton>
             <FlexBetween 
